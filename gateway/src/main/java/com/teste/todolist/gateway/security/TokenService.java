@@ -23,7 +23,7 @@ public class TokenService {
 	            var algoritmo = Algorithm.HMAC256(secret);
 	            return JWT.create()
 	                    .withIssuer("API TO-DO List")
-	                    .withSubject(usuario.getLogin())
+	                    .withSubject(usuario.getUsername())
 	                    .withExpiresAt(dataExpiracao())
 	                    .sign(algoritmo);
 	        } catch (JWTCreationException exception){
@@ -35,7 +35,7 @@ public class TokenService {
 	        try {
 	            var algoritmo = Algorithm.HMAC256(secret);
 	            return JWT.require(algoritmo)
-	                    .withIssuer("API Voll.med")
+	                    .withIssuer("API TO-DO List")
 	                    .build()
 	                    .verify(tokenJWT)
 	                    .getSubject();
