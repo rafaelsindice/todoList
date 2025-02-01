@@ -1,5 +1,4 @@
 package com.teste.todolist.gateway.controller;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -9,10 +8,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.teste.todolist.gateway.security.DadosTokenJWT;
-import com.teste.todolist.gateway.security.TokenService;
 import com.teste.todolist.gateway.domain.usuario.DadosAutenticacao;
 import com.teste.todolist.gateway.domain.usuario.Usuario;
+import com.teste.todolist.gateway.security.DadosTokenJWT;
+import com.teste.todolist.gateway.security.TokenService;
 
 import jakarta.validation.Valid;
 
