@@ -5,9 +5,6 @@ public enum Status {
 	EM_ANDAMENTO,
 	CONCLUIDO;
 
-	void atualizarStatus(Status status) {
-		// TODO Auto-generated method stub
-		
-	}
+
 	
 }

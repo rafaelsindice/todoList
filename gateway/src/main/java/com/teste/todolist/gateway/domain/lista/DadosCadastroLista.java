@@ -3,13 +3,13 @@ package com.teste.todolist.gateway.domain.lista;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-public record DadosLista(
+public record DadosCadastroLista(
 		@NotBlank
-		String nome, 
+		String titulo, 
 		@NotBlank
 		
 		@NotBlank
-		String  telefone,
+		String  tarefa,
 		
 		@NotNull
 		Status status){

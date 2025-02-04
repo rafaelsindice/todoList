@@ -20,13 +20,15 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @EqualsAndHashCode(of="id")
 public class Lista {
+	
+	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String titulo;
 	private String tarefa;
 	@Enumerated(EnumType.STRING)
 	private Status status;
-	
+	private Boolean ativo; 
 	
 	public void atualizarInformacoes(@Valid DadosAtualizacaoLista dados) {
 		if (dados.titulo()!=null) {
@@ -38,6 +40,12 @@ public class Lista {
 		if (dados.status()!=null) {
 			this.status=dados.status();
 		}
+	}
+	public void excluir() {
+		this.ativo=false;		
+	}
+	public Lista(@Valid DadosCadastroLista dados) {
+		// TODO Auto-generated constructor stub
 	}
 }
 
