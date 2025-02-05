@@ -16,12 +16,19 @@ import lombok.NoArgsConstructor;
 @Table(name = "listas")
 @Entity(name = "Lista")
 @Getter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(of="id")
 public class Lista {
 	
-	
+	public Lista(DadosCadastroLista dados) {
+		this.titulo=dados.titulo();
+		this.tarefa=dados.tarefa();
+		this.status=dados.status();
+		this.ativo=true;
+		
+		
+	}
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String titulo;
@@ -40,12 +47,13 @@ public class Lista {
 		if (dados.status()!=null) {
 			this.status=dados.status();
 		}
+		if (dados.ativo()) {
+			this.ativo=dados.ativo();
+		}
 	}
 	public void excluir() {
 		this.ativo=false;		
 	}
-	public Lista(@Valid DadosCadastroLista dados) {
-		// TODO Auto-generated constructor stub
-	}
+	
 }
 

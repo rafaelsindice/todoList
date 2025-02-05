@@ -7,6 +7,7 @@ public record DadosAtualizacaoLista(
 		Long id, 
 		String titulo,
 		String tarefa,
-		Status status	) {
+		Status status,
+		boolean ativo) {
 
 }

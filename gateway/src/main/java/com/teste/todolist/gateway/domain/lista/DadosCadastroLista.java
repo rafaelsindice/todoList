@@ -6,11 +6,15 @@ import jakarta.validation.constraints.NotNull;
 public record DadosCadastroLista(
 		@NotBlank
 		String titulo, 
-		@NotBlank
 		
 		@NotBlank
 		String  tarefa,
 		
 		@NotNull
-		Status status){
+		Status status,
+		
+		@NotNull
+		boolean ativo
+		
+		){
 }
